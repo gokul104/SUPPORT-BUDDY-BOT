@@ -1,0 +1,263 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin-top: 30px;
+    min-height: 100vh;
+    background-color: #E0F2F1; /* Soft light teal background */
+}
+
+/* Header styles */
+header {
+    background-color: #008080; /* Teal header */
+    padding: 1.2rem 2.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    justify-content: center;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* White link color */
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FF7043; /* Orange hover effect */
+}
+
+/* Main content styles */
+main {
+    padding: 140px 2rem 2rem; /* Added more space at the top */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #008080; /* Teal heading */
+    margin-bottom: 1.5rem;
+}
+
+main > p {
+    font-size: 1.3rem;
+    color: #555; /* Light gray text */
+    margin-bottom: 2rem;
+}
+
+/* Chat container styles */
+.chat-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Message styles */
+.user-message, .bot-message {
+    padding: 1.2rem;
+    border-radius: 18px;
+    margin: 0.6rem 0;
+    font-size: 1.1rem; /* Adjusted message font size */
+}
+
+.user-message {
+    background-color: #008080; /* Teal background for user message */
+    color: white;
+    align-self: flex-end;
+    max-width: 85%; /* Increased max width */
+}
+
+.bot-message {
+    background-color: #FF7043; /* Orange background for bot messages */
+    color: white;
+    align-self: flex-start;
+    max-width: 85%; /* Increased max width */
+}
+
+/* Error message styles */
+.error-message {
+    background-color: #FFEBEE; /* Light red background for errors */
+    color: #D32F2F; /* Dark red for error text */
+    padding: 1rem;
+    border-radius: 15px;
+    margin: 0.5rem 0;
+    align-self: center;
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #B2DFDB; /* Lighter teal background for search bar */
+    border-top: 1px solid #eee;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 0.9rem 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: #008080; /* Teal border on focus */
+}
+
+#search-button {
+    background-color: #008080; /* Teal button color */
+    color: white;
+    border: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #004D4D; /* Darker teal on hover */
+}
+
+#search-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #F1F1F1;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #008080; /* Teal scrollbar */
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #004D4D; /* Darker teal on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    background-color: #008080; /* Teal footer */
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 1.2rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    main {
+        padding: 120px 1rem 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .chat-container {
+        height: 550px;
+    }
+
+    .user-message, .bot-message {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 45px;
+    }
+
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    main > p {
+        font-size: 1.1rem;
+    }
+
+    .search-bar {
+        padding: 1rem;
+    }
+
+    #user-input {
+        padding: 0.7rem 1.2rem;
+    }
+
+    #search-button {
+        padding: 0.7rem 1.3rem;
+    }
+}
+
